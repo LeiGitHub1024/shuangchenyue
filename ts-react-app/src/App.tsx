@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <Routes>
             <Route path="/" element={<Home/>}  />
-            <Route path="/about" element={<About/>} />
+            <Route path="/about" element={<About name='about' />} />
             <Route element={<Error/>} />
         </Routes>
       {/* <header className="App-header">
@@ -37,3 +37,5 @@ function App() {
 }
 
 export default App;
+
+
