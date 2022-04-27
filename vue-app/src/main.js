@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { createApp } from 'vue'
 import {createRouter,createWebHashHistory,createWebHistory} from 'vue-router'
+import store from './pages/VueX/store'
 import App from './App.vue'
 import NotFound from './pages/404.vue'
 import Home from './pages/Home.vue'
@@ -12,6 +13,14 @@ import Layout23 from './pages/Layout23.vue'
 import Shape from './pages/Shape.vue'
 import ZIndex from './pages/ZIndex.vue'
 import AJAX from './pages/AJAX.vue'
+import JSONP from './pages/JSONP.vue'
+import Alive from './pages/Alive.vue'
+import A from './pages/A.vue'
+import VModule from './pages/Vmodule.vue'
+import VueX from './pages/VueX/VueX.vue'
+import VueX1 from './pages/VueX/VueX1.vue'
+import VueX2 from './pages/VueX/VueX2.vue'
+import VueX3 from './pages/VueX/VueX3.vue'
 
 
 
@@ -26,6 +35,15 @@ const routes = [
   { path:'/shape',component:Shape},
   { path:'/z-index',component:ZIndex},
   { path:'/ajax',component:AJAX},
+  { path:'/jsonp',component:JSONP},
+  { path:'/alive',component:Alive},
+  { path:'/a',component:A},
+  { path:'/vmodule',component:VModule},
+  { path:'/vuex',component:VueX},
+  { path:'/vuex/1',component:VueX1},
+  { path:'/vuex/2',component:VueX2},
+  { path:'/vuex/3',component:VueX3},
+
 
 
 ]
@@ -36,6 +54,7 @@ const router = createRouter({
 })
 const app = createApp(App)
 app.use(router)
+app.use(store)
 app.mount('#app')
 
 // createApp(App).mount('#app')

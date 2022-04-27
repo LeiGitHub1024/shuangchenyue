@@ -15,11 +15,26 @@
     <router-link to="/shape"><span style="margin-left:10px">Shape</span></router-link>
     <router-link to="/z-index"><span style="margin-left:10px">ZIndex</span></router-link>
     <router-link to="/ajax"><span style="margin-left:10px">AJAX</span></router-link>
-
+    <router-link to="/jsonp"><span style="margin-left:10px">JSONP</span></router-link>
+    <router-link to="/alive"><span style="margin-left:10px">KeepAlive</span></router-link>
+    <router-link to="/a"><span style="margin-left:10px">A</span></router-link>
+    <router-link to="/vmodule"><span style="margin-left:10px">V-module</span></router-link>
+    <router-link to="/vuex"><span style="margin-left:10px">Vuex</span></router-link>
 
   </p>
-  <router-view></router-view>
-  
+  <!-- <main>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+  </main> -->
+
+  <router-view v-slot="{ Component }">
+    <!-- 这里的include要确保组件的exportdafault要写name，不然不生效！ -->
+     <keep-alive include="Alive,JSONP">
+        <component :is="Component" />
+      </keep-alive>
+  </router-view>
+ 
   </div>
 
 </template>
@@ -32,7 +47,12 @@ export default {
   name: 'App',
   components: {
     // MiniHello
-  }
+  },
+  data() {
+    return {
+      keepAliveList:['ajax','alive']  
+    }
+  },
 }
 </script>
 
