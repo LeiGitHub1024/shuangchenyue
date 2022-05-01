@@ -21,8 +21,10 @@ import VueX from './pages/VueX/VueX.vue'
 import VueX1 from './pages/VueX/VueX1.vue'
 import VueX2 from './pages/VueX/VueX2.vue'
 import VueX3 from './pages/VueX/VueX3.vue'
-
-
+const DynamicRout = ()=>import('@/pages/DynamicRout/main.vue') //懒加载动态路由
+const DynamicRoutSon = ()=>import('@/pages/DynamicRout/son.vue') 
+const Promise = ()=>import('@/pages/Promise.vue')
+const ToastDemo = ()=>import('@/pages/ToastDemo.vue')
 
 const routes = [
   { path: '/', component: Home },
@@ -43,7 +45,10 @@ const routes = [
   { path:'/vuex/1',component:VueX1},
   { path:'/vuex/2',component:VueX2},
   { path:'/vuex/3',component:VueX3},
-
+  { path:'/dynamicRout',component:DynamicRout},
+  { path:'/dynamicRout/:userId',component:DynamicRoutSon},
+  { path:'/promise',component:Promise},
+  { path:'/toast',component:ToastDemo},
 
 
 ]
