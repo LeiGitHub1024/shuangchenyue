@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>眼球运动</title>
+  <style>
+    content>div{
+      background-color: #024200;
+      border-radius: 100%;
+      height: 10vh;
+      width: 10vh;
+    }
+    .left_ball{
+      margin-left:0;
+    }
+    .right_ball{
+      margin-left:calc(100vw - 30vh);
+    }
+    /* 左向右ball1 */
+    .ball1{
+      animation-name:l2r;
+      animation-duration: 1s;
+      animation-fill-mode : forwards;
+      transition-timing-function:linear;
+    }
+    @keyframes l2r{
+      0% {}
+      100% {transform: translateX(100vw) translateX(-30vh);}
+    }
+    /* //右向左ball0 */
+    .ball0{
+      margin-left:calc(100vw - 30vh);
+      animation-name:r2l;
+      animation-duration: 1s;
+      animation-fill-mode : forwards;
+      transition-timing-function:linear;
+    }
+    @keyframes r2l{
+      0% {}
+      100% {transform: translateX(-100vw) translateX(30vh);}
+    }
+  </style>
+</head>
+<body style="background-color: #cad7bc; margin: 10vh 10vh;">
+  <content>
+    <div id="1"></div>
+    <div id="2"></div>
+    <div id="3"></div>
+    <div id="4"></div>
+    <div id="5"></div>
+    <div id="6"></div>
+    <div id="7"></div>
+    <div id="8"></div>
+  
+  </content>
+  <script>
+    async function action(){
+      function dp1(id){
+      if(id>8) return
+      setTimeout(() => {
+        document.getElementById(id).className="ball" + id%2
+        dp1(id+1)
+      }, 1000);
+    }
+    function dp2(id){
+      if(id<0) return
+      setTimeout(() => {
+        document.getElementById(id).className="ball" + (1-id%2)
+        dp2(id-1)
+      }, 1000);
+    }
+
+    //dp1
+    for(let i=2;i<9;i+=2){
+      document.getElementById(i).className='right_ball'
+    }
+    dp1(1)
+    await new Promise(resolve=>setTimeout(resolve, 9000))
+    dp2(8)
+
+    //dp2
+    
+
+    }
+
+    action()
+    console.log('参考视频：','https://www.bilibili.com/video/BV1bK411n7ej/?spm_id_from=333.788.recommend_more_video.2');
+    
+    
+
+
+  </script>
+  
+</body>
+
+
+</html>
