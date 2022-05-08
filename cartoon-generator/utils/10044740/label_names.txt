@@ -1,0 +1,7 @@
+_background_
+clothes
+eye
+face
+hair
+mouse
+skin
