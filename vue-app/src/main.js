@@ -25,6 +25,7 @@ const DynamicRout = ()=>import('@/pages/DynamicRout/main.vue') //懒加载动态
 const DynamicRoutSon = ()=>import('@/pages/DynamicRout/son.vue') 
 const Promise = ()=>import('@/pages/Promise.vue')
 const ToastDemo = ()=>import('@/pages/ToastDemo.vue')
+const Flex = ()=>import('@/pages/Flex.vue')
 
 const routes = [
   { path: '/', component: Home },
@@ -49,6 +50,7 @@ const routes = [
   { path:'/dynamicRout/:userId',component:DynamicRoutSon},
   { path:'/promise',component:Promise},
   { path:'/toast',component:ToastDemo},
+  { path:'/flex',component:Flex},
 
 
 ]

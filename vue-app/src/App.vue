@@ -23,6 +23,7 @@
     <router-link to="/dynamicRout"><span style="margin-left:10px">DynamicRout</span></router-link>
     <router-link to="/promise"><span style="margin-left:10px">Promise</span></router-link>
     <router-link to="/toast"><span style="margin-left:10px">Toast</span></router-link>
+    <router-link to="/flex"><span style="margin-left:10px">Flex</span></router-link>
 
   </p>
   <!-- <main>

@@ -109,14 +109,13 @@ export default {
     height:10rem;
     margin-left: -100%;
     position: relative;
-    right: 200px;
+    right: 200px;  
   }
   .mid3{
     float:left;
     background-color: greenyellow;
     height:10rem;
     width:100%; /**这是关键 */
-    
   }
   .right3{
     float:left;
@@ -150,6 +149,7 @@ export default {
     margin:0 200px 0 200px;
     height:200px;
     background-color: aqua;
+    overflow:sc ;
   }
   .right4{
     background-color: tomato;
